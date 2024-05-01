@@ -1,0 +1,54 @@
+﻿@model Servicios_Entrega3.Models.Persona
+@{
+    ViewBag.Title = "Persona";
+}
+
+<html>
+<head>
+    <title>Persona</title>
+    <link rel="stylesheet" href="~/Content/PersonaVista.css" />
+</head>
+<body>
+    <div>
+        <h3>Cliente registrado con éxito</h3>
+        <form action="Persona/Persona" method="post">
+            <table>
+
+                <tr>
+                    <td><label>Identificación: @Model.Identificacion </label></td>
+                </tr>
+                <tr>
+                    <td><label>Nombre: @Model.Nombre</label></td>
+                </tr>
+                <tr>
+                    <td><label>Apellidos: @Model.Apellidos</label></td>
+                </tr>
+                <tr>
+                    <td><label>Fecha nacimiento: @Model.FechaNacimiento.ToString("dd/MM/yyyy")</label></td>
+                </tr>
+                <tr>
+                    <td><label>Estrato: @Model.Cliente.Estrato</label></td>
+                </tr>
+                <tr>
+                    <td><label>Meta Ahorro Energia: @Model.Cliente.Metaahorroenergia</label></td>
+                </tr>
+                <tr>
+                    <td><label>Consumo Actual Energia: @Model.Cliente.Consumoactualenergia</label></td>
+                </tr>
+
+                <tr>
+                    <td><label>Promedio Consumo Agua: @Model.Cliente.Promedioconsumodeagua</label></td>
+                </tr>
+
+                <tr>
+                    <td><label>Consumo Actual Agua: @Model.Cliente.Consumoactualagua</label></td>
+                </tr>
+                <tr>
+                    <td><label>Consumo Gas: @Model.Cliente.Consumogas</label></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+﻿@model Servicios_Entrega3.Models.Persona
+@{
+    ViewBag.Title = "mostrarActualizarPromedioConsumoAgua";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>Actualizar Promedio de Consumo de Energia</title>
+    <link rel="stylesheet" href="~/Content/PersonaVista.css" />
+</head>
+<body>
+    <div>
+        <h3>Actualizar Promedio de Consumo de Energia</h3>
+        <form action="cambiarEnfermedad" method="post">
+            <table>
+                @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+                {
+                    <div class="alert alert-success">@ViewBag.Notificacion</div>
+                }
+
+            <tr>
+                <label>El cliente identificado con el numero: </label>
+                <div class="text-muted">
+                    @Model.Identificacion
+                </div>
+            </tr>
+            <tr>
+                <label>Presenta este promedio de consumo de agua:</label>
+                <div class="text-muted">
+                    @Model.Cliente.Promedioconsumodeagua
+                </div>
+            </tr>
+                @using (Html.BeginForm("cambiarPromedioConsumoEnergia", "Home", FormMethod.Post))
+                {
+                    <tr>
+                        <td><label>Nuevo Promedio: :  </label></td>
+                        <td><input type="text" name="nuevoPromedioAgua"pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" "d /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" name="enviar" value="Enviar" /></td>
+                    </tr>
+                }
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

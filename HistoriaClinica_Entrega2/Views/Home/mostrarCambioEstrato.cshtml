@@ -1,0 +1,30 @@
+﻿
+@model Servicios_Entrega3.Models.Persona
+@{
+    ViewBag.Title = "mostrarCambioEstrato";
+}
+
+<html>
+<head>
+    <title>Estrato</title>
+    <link rel="stylesheet" href="~/Content/PersonaVista.css" />
+</head>
+<body>
+    <div>
+        <h3>Cambio de Estrato registrado con éxito</h3>
+        <form action="Home/EPSchangeView" method="post">
+            <table>
+
+                <tr>
+                    <td><label>El cliente identificado con el numero: @Model.Identificacion </label></td>
+                </tr>
+                <tr>
+                    <td><label>Presenta un nuevo estrato: @Model.Cliente.Estrato</label></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+

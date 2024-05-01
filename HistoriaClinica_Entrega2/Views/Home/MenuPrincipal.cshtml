@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/Content/PersonaVista.css" />
+</head>
+<body>
+    <br>
+    <h1 style="text-align: center;">Servicios</h1>
+
+    <br />
+    <div class="container">
+       
+            
+            <h3>
+                Esta herramienta digital ayudara a calcular 
+                los costos de los servicios de una persona.
+            </h3>
+            <h2 style="text-align: center;">Menú</h2>
+
+        </div>
+        
+    </div>
+    <div class="buttons">
+        @using (Html.BeginForm("registro", "Home", FormMethod.Post))
+        {
+            <style>
+                .boton-minimalista {
+                    background-color: transparent;
+                    border: 2px solid #333;
+                    color: #333;
+                    font-size: 16px;
+                    padding: 10px 20px;
+                }
+            </style>
+
+            <button id="miBoton1" class="boton-minimalista"> Registrar Paciente...............................................</button>
+        }
+        @using (Html.BeginForm("cambioEstrato", "Home", FormMethod.Post))
+        {
+            <button id="miboton2" class="boton-minimalista"> Cambio de Estrato....................................................</button>
+        }
+        @using (Html.BeginForm("actualizarMetaAhorroEnergia", "Home", FormMethod.Post))
+        {
+            <button id="miboton3" class="boton-minimalista"> Actualizar meta de ahorro de energia...........................</button>
+        }
+        @using (Html.BeginForm("actualizarConsumoActualEnergia", "Home", FormMethod.Post))
+        {
+            <button id="miboton4" class="boton-minimalista"> Actualizar consumo actual de energia..............................</button>
+        }
+        @using (Html.BeginForm("actualizarPromedioConsumoAgua", "Home", FormMethod.Post))
+        {
+            <button id="miboton5" class="boton-minimalista"> Actualizar promedio consumo de agua..................</button>
+        }
+        @using (Html.BeginForm("actualizarConsumoActualAgua", "Home", FormMethod.Post))
+        {
+            <button id="miboton6" class="boton-minimalista"> Actualizar consumo de agua........</button>
+        }
+        @using (Html.BeginForm("actualizarConsumoGas", "Home", FormMethod.Post))
+        {
+            <button id="miboton6" class="boton-minimalista"> Actualizar consumo de gas........</button>
+        }
+        
+           
+    </div>
+</body>
+</html>
+
+

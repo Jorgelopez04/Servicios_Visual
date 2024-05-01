@@ -1,0 +1,48 @@
+﻿@model Servicios_Entrega3.Models.Persona
+@{
+    ViewBag.Title = "mostrarActualizarConsumoActualEnergia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>Actualizar Consumo de Gas</title>
+    <link rel="stylesheet" href="~/Content/PersonaVista.css" />
+</head>
+<body>
+    <div>
+        <h3>Actualizar Consumo de Gas</h3>
+        <form action="cambioCosto" method="post">
+            <table>
+                @if (!string.IsNullOrEmpty(ViewBag.Notificacion))
+                {
+                    <div class="alert alert-success">@ViewBag.Notificacion</div>
+                }
+
+                <tr>
+                    <label>El cliente identificado con el numero: </label>
+                    <div class="text-muted">
+                        @Model.Identificacion
+                    </div>
+                </tr>
+                <tr>
+                    <label>Presenta este consumo de gas: </label>
+                    <div class="text-muted">
+                        @Model.Cliente.Consumogas
+                    </div>
+                </tr>
+                @using (Html.BeginForm("cambioConsumoGas", "Home", FormMethod.Post))
+                {
+                    <tr>
+                        <td><label>Nuevo Conusmo de Gas:  </label></td>
+                        <td><input type="text" name="nuevoConsumoGas" pattern="[0-9]+" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value=" " /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" name="enviar" value="Enviar" /></td>
+                    </tr>
+                }
+            </table>
+        </form>
+    </div>
+</body>
+</html>
